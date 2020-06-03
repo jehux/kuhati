@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">kuhati</string>
+    <string name="usuario">usuario</string>
+    <string name="contrasena">contraseña</string>
+    <string name="registrarse">registrarse</string>
+    <string name="nombre_usuario">nombre usuario</string>
+    <string name="nombre">nombre</string>
+    <string name="correo">correo</string>
+    <string name="registro">Registro</string>
+    <string name="buscar">buscar</string>
+    <string name="buscar_ingrediente">  ingrediente  </string>
+    <string name="buscar_receta">  buscar receta  </string>
+    <string name="pollo">pollo</string>
+    <string name="ingredientes1">suficiente de agua, para cocer la pasta\n
+    200 gramos de espagueti\n
+    500 mililitros de agua, para la salsa de tomate\n
+    8 cucharadas de Knorr® Tomate Deshidratado\n
+    3 cucharadas de mantequilla\n
+    1/4 tazas de cebolla\n
+    1/4 tazas de rajas poblanas\n
+    1/2 tazas de calabaza, cortada en cubitos\n
+    1/2 tazas de champiñón, cortados en rodajas\n
+    1 cucharada de epazote, finamente picado\n
+    1 taza de crema ácida\n
+    1 taza de flor de calabaza\n
+    suficiente de queso panela, cortado en cubitos\n
+    hojas de epazote, para decorar</string>
+    <string name="prpcedimiento">procedimiento</string>
+    <string name="prpcedimientos1">En una ollita a fuego medio calienta el agua, una vez que hierva agrega el espagueti y cocina por 10 minutos, o bien, hasta que esté al dente.
+En una ollita a fuego medio hierve el agua, agrega Knorr® Tomate Deshidratado, cocina por 2 minutos, o hasta que tenga consistencia espesa.
+Calienta la mantequilla en una sartén a fuego medio, sofríe la cebolla, las rajas, la calabaza, los champiñones, el epazote, la crema ácida, sazona con la salsa de tomate, añade el espagueti, la flor de calabaza y retira del fuego.
+Sirve y decora con queso panela y epazote.</string>
+
+</resources>

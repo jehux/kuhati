@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "347409192125",
+    "firebase_url": "https://kuhati-b867c.firebaseio.com",
+    "project_id": "kuhati-b867c",
+    "storage_bucket": "kuhati-b867c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347409192125:android:b2269386f1e3ba040753d4",
+        "android_client_info": {
+          "package_name": "com.example.kuhati"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347409192125-70ca91iph8cfok9pa7hhegr3qcevtqsh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kuhati",
+            "certificate_hash": "36d5a57c851fe4b5e4afdfd1954ab0e5e37b1d1d"
+          }
+        },
+        {
+          "client_id": "347409192125-ooh5uvli9nbkr4ish1qv14r7e7ih70te.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMX6Ix2hyH0-Ei3ve2zxM9flbE6-loppk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347409192125-ooh5uvli9nbkr4ish1qv14r7e7ih70te.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

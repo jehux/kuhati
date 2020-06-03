@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="mi_marron">#843C0C</color>
+    <color name="mi_rosa">#EFA6A6</color>
+    <color name="mi_primario">#FFF7C25A</color>
+    <color name="mi_secundario">#843C0C</color>
+    <color name="mi_terceario">#FF7F6000</color>
+</resources>
