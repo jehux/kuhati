@@ -29,7 +29,8 @@ public class buscar extends AppCompatActivity {
     private DescripcionRecetaAdapter mAdapter;
     private RecyclerView mRecycleView;
     private ArrayList<DescripcionReceta> mDescripcionRecetaList = new ArrayList<>();
-    private EditText buscadorView = findViewById(R.id.editText3);
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Toast toast = Toast.makeText(getApplicationContext(),
@@ -47,14 +48,9 @@ public class buscar extends AppCompatActivity {
         btnReceta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent (v.getContext(), Receta.class);
-                //startActivityForResult(intent, 0);
+                Intent intent = new Intent (v.getContext(), Receta.class);
+                startActivityForResult(intent, 0);
 
-                // Write a message to the database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("mensajes");
-                myRef.setValue("Hello, World!");
-                toast.show();
             }
         });
         btnIngrediente.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +64,7 @@ public class buscar extends AppCompatActivity {
 
     }
     protected void getMessagesFromFirebase(){
-        
+
 
         mDatabase.child("recetas").addValueEventListener(new ValueEventListener() {
             @Override
