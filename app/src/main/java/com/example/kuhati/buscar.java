@@ -29,7 +29,7 @@ public class buscar extends AppCompatActivity {
     private DescripcionRecetaAdapter mAdapter;
     private RecyclerView mRecycleView;
     private ArrayList<DescripcionReceta> mDescripcionRecetaList = new ArrayList<>();
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
