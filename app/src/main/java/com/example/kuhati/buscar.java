@@ -29,6 +29,7 @@ public class buscar extends AppCompatActivity {
     private DescripcionRecetaAdapter mAdapter;
     private RecyclerView mRecycleView;
     private ArrayList<DescripcionReceta> mDescripcionRecetaList = new ArrayList<>();
+    private EditText barraBuscador;
 
 
     @Override
@@ -38,45 +39,73 @@ public class buscar extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar);
+
+        //buscador del layout
+        barraBuscador = (EditText) findViewById(R.id.editText5);
+        //botones del layout
         Button btnReceta = (Button) findViewById(R.id.button5);
         Button btnIngrediente = (Button) findViewById(R.id.button4);
+        //recyclerView para mostrar la lista de datos
         mRecycleView = (RecyclerView) findViewById(R.id.recyclerViewRecetas);
         //tipo de muestra de datos, horizontal, vertical, grilla
         mRecycleView.setLayoutManager(new LinearLayoutManager(this));
+        //instancia de Firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         btnReceta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), Receta.class);
-                startActivityForResult(intent, 0);
-
+                //Intent intent = new Intent (v.getContext(), Receta.class);
+                //startActivityForResult(intent, 0);
+                String buscar = barraBuscador.getText().toString();
+                getMessagesFromFirebase(buscar,0);
             }
         });
         btnIngrediente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String buscar = barraBuscador.getText().toString();
                 //Intent intent = new Intent (v.getContext(), Receta.class);
                 //startActivityForResult(intent, 0);
-                getMessagesFromFirebase();
+                getMessagesFromFirebase(buscar,1);
             }
         });
 
     }
-    protected void getMessagesFromFirebase(){
+    protected void getMessagesFromFirebase(final String buscar, final int tipoBusqueda){
 
 
         mDatabase.child("recetas").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
+
+                    mDescripcionRecetaList.clear();
+
                     for (DataSnapshot ds: dataSnapshot.getChildren()){
                         String titulo = ds.child("nombre").getValue().toString();
                         String descripcion = ds.child("descripcion").getValue().toString();
                         String urlImagen = ds.child("imagen").getValue().toString();
-                        mDescripcionRecetaList.add(new DescripcionReceta(titulo,urlImagen,descripcion));
+                        String ingredientes = ds.child("ingredientes").getValue().toString();
+                        String procedimiento = ds.child("preparacion").getValue(String.class);
+
+                        switch (tipoBusqueda){
+                            case 0: //buscar por receta
+                                if (titulo.contains(buscar)){
+                                    mDescripcionRecetaList.add(new DescripcionReceta(titulo,urlImagen,descripcion,ingredientes,procedimiento));
+                                }
+                                break;
+                            case 1: //busca por ingrediente
+                                if (ingredientes.indexOf(buscar) !=-1){
+                                    mDescripcionRecetaList.add(new DescripcionReceta(titulo,urlImagen,descripcion,ingredientes,procedimiento));
+                                }
+                                break;
+                            default:
+                                mDescripcionRecetaList.add(new DescripcionReceta(titulo,urlImagen,descripcion,ingredientes,procedimiento));
+                                break;
+                        }
                     }
-                    mAdapter = new DescripcionRecetaAdapter(mDescripcionRecetaList,R.layout.cuadro_receta);
+                    mAdapter = new DescripcionRecetaAdapter(getApplicationContext(), mDescripcionRecetaList, R.layout.cuadro_receta);
                     mRecycleView.setAdapter(mAdapter);
                 }
             }

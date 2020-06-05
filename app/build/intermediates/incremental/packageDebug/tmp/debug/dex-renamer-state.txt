@@ -1,4 +1,4 @@
-#Wed Jun 03 14:23:41 CDT 2020
+#Fri Jun 05 12:24:05 CDT 2020
 base.0=/home/jehu/AndroidStudioProjects/kuhati/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

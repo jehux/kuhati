@@ -4,13 +4,34 @@ public class DescripcionReceta  {
     private String titulo;
     private String imagen;
     private String descripcion;
+    private String ingredientes;
+    private String procedimiento;
+
 
     public DescripcionReceta(){
     }
-    public DescripcionReceta(String titulo, String imagen, String descripcion){
+    public DescripcionReceta(String titulo, String imagen, String descripcion, String ingredientes, String procedimiento){
         this.titulo=titulo;
         this.imagen=imagen;
         this.descripcion=descripcion;
+        this.ingredientes = ingredientes;
+        this.procedimiento = procedimiento;
+    }
+
+    public String getProcedimiento() {
+        return procedimiento;
+    }
+
+    public void setProcedimiento(String procedimiento) {
+        this.procedimiento = procedimiento;
+    }
+
+    public String getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
     }
 
     public String getTitulo() {
