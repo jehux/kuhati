@@ -33,13 +33,14 @@ public class Receta extends AppCompatActivity {
             String descripcion = getIntent().getStringExtra("descripcion");
             String ingredientes = getIntent().getStringExtra("ingredientes");
             String procedimiento = getIntent().getStringExtra("procedimiento");
+
             titulo.setText(nombre);
-            Picasso.get()
+            /*Picasso.get()
                     .load(imagen)
                     .error(R.drawable.chilaquiles)
                     .fit()
                     .centerInside()
-                    .into(imageButton);
+                    .into(imageButton);*/
             TextViewIngredientes.setText(ingredientes);
             TextViewDescripcion.setText(descripcion);
             TextViewProcedimiento.setText(procedimiento);

@@ -24,7 +24,7 @@ public class DescripcionRecetaAdapter extends RecyclerView.Adapter<DescripcionRe
     private int resource;
     private ArrayList<DescripcionReceta> DescripcionRecetaList;
     private Context mContext;
-    private DescripcionReceta descripcionReceta;
+    //private DescripcionReceta descripcionReceta;
 
     public DescripcionRecetaAdapter(Context context, ArrayList<DescripcionReceta> DescripcionRecetaList, int resource ){
         this.DescripcionRecetaList = DescripcionRecetaList;
@@ -40,7 +40,7 @@ public class DescripcionRecetaAdapter extends RecyclerView.Adapter<DescripcionRe
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        descripcionReceta = DescripcionRecetaList.get(position);
+        final DescripcionReceta descripcionReceta = DescripcionRecetaList.get(position);
         //inserta el titulo al cuadro de receta
         holder.textViewTitulo.setText(descripcionReceta.getTitulo());
         //inserta la imagen url al ImageButton del cuadro receta
@@ -55,8 +55,8 @@ public class DescripcionRecetaAdapter extends RecyclerView.Adapter<DescripcionRe
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(mContext, Receta.class);
-                mIntent.putExtra("imagen",descripcionReceta.getImagen());
                 mIntent.putExtra("nombre",descripcionReceta.getTitulo());
+                mIntent.putExtra("imagen",descripcionReceta.getImagen());
                 mIntent.putExtra("descripcion",descripcionReceta.getDescripcion());
                 mIntent.putExtra("procedimiento",descripcionReceta.getProcedimiento());
                 mIntent.putExtra("ingredientes",descripcionReceta.getIngredientes());
